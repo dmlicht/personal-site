@@ -1,56 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Abril+Fatface' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Droid+Sans:700' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <title>David Lichtenberg</title>
-    <link rel="stylesheet" href="../static/meyerweb-reset.css">
-    <link rel="stylesheet" href="../static/cf.css">
-    <link rel="stylesheet" href="../static/style.css">
-  </head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/meyerweb-reset.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', filename='css/cf.css')}}" />
+    {# <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" /> #}
+    <link rel="stylesheet/less" type="text/css" href="{{url_for('static', filename='less/style.less')}}" />
+    <script src="{{url_for('static', filename='js/less.js')}}" type="text/javascript"></script>
+</head>
   <body>
     <div id="header-background">
       <header>
         <hgroup class="cf">
           <h1>David <br />Lichtenberg</h1>
-          <!-- <h1> The Physical Dangers <br /> of Working With Code</h1> -->
           <div id="header-icons">
-            <img src="../static/science.svg" />
-            <img id="first" src="../static/coffee.svg" />
+            <img src="{{url_for('static', filename='img/science.svg')}}" />
+            <img id="first" src="{{url_for('static', filename='img/coffee.svg')}}" />
           </div>
-<!--           <div id="contact">
-            <h2>Find Me On:</h2>
-            <ul id="contacts">
-              <li>Twitter</li>
-              <li>Linkedin</li>
-              <li>Github</li>
-              <li>Rosalind.info</li>
-              <li>Google Plus</li>
-              <li>Sound Cloud</li>
-            </ul>
-          </div> -->
-
+          {# {% include 'contact_list.html' %} #}
         </hgroup>
         <nav>
           <ul>
             {% for page in pages %}
               {% if current_page == page %}
-                <li class="selected"><a href="{{page}}">{{page}}</a></li>
+                <li class="selected"><a href="#{{page}}">{{page}}</a></li>
               {% else %}
-                <li><a href="{{page}}">{{page}}</a></li>
+                <li><a href="#">{{page}}</a></li>
               {% endif %}
             {% endfor %}
           </ul>
         </nav>
       </header>
     </div>
-    <div id="content-background" class="cf">      
-      <div class="content-container cf" >
-        {% block content %}{% endblock %}
-      </div>
+        <div id="content-background" class="cf">      
+        {% for section in pages %}
+            <section id="{{section}}" data-type="background" data-speed="100">
+                <div class="content-container cf" >
+                {% include section + ".html" %}
+                </div>
+            </section>
+        {% endfor %}
+        </div>
     </div>
-    <footer><p>This is a site built in HTML5, CSS3, Python, and Flask. It uses <a href='http://www.google.com/fonts/#ChoosePlace:select/Collection:Droid+Sans|Lato'>Google Web Fonts</a>, <a href="#">Subtle Patterns</a> and <a href="#">a noun from the noun project</a>. If you would like a custom site built, designed, or both contact dlichte5 [at] jhu [dot] edu. I would be excited to get involved in pro bono projects if they are not too long and for a good cause :D<p></footer>
-  </body>
+    {% include 'footer.html' %}
+    <script src="{{url_for('static', filename='js/jquery.js')}}"></script>
+    <script src="{{url_for('static', filename='js/custom.js')}}"></script>
+    </body>
 </html>
