@@ -3,6 +3,7 @@
 // --- VARIABLES ---
 
 @hl-text: hsl(260, 78%, 60%);
+@secondary-text: hsl(30, 78%, 60%);
 @light-text: #fff;
 @dark-text: #444;
 @space: 50px;
@@ -82,7 +83,6 @@ hgroup{
 
 
 section {
-    height: 1000px;
     img{
         float: left;
         height: 40px;
@@ -104,26 +104,70 @@ section {
     }
 }
 
-#about {
+#intro {
     background: @hl-text + #111;
+    border-bottom: 100px solid @hl-text - #111;
     h2 {
         color: #fff;
         font-family: 'Droid Sans', sans-serif;
         text-align: center;
         font-size: 4.2em;
-        padding: (@space * 2) 0;
+        margin: (@space * 2 - 10) 0;
+        padding: 10px 0;
+        background: @hl-text;
     }
     p {
-        color: saturate(lighten(@hl-text, 30%), 20%);
+        color: saturate(lighten(@hl-text, 40%), 20%);
         font-family: 'Lato';
         font-weight: 300;
-        font-size: 1.3em;
+        font-size: 1.5em;
         text-align: center;
     }
 }
 
 #projects{
     text-align: center;
+}
+
+#skills{
+    .content-container{
+        background: #ddd;
+        .border-top-right-radius(5px);
+        .border-top-left-radius(5px);
+        .box-shadow(inset 0px 1px 5px rgba(0,0,0,.1));
+    }
+    h2 span{
+        font-family: 'Droid Sans', sans-serif;
+        background: @secondary-text;
+        padding: 10px;
+        display: inline;
+        color: white;
+    }
+    h2{
+        margin-bottom: 50px;
+    }
+
+    table {
+        float: left;
+        margin-left: 50px;
+    }
+
+    table:first{
+        margin-left: 0px;
+    }
+
+    tr:nth-child(odd) {
+        background:#eee;
+    }
+    tr:nth-child(even){
+        background:#fff;
+    }
+    td {
+        padding: 10px;
+        margin-right: 50px;
+        font-family: 'Lato';
+        font-width: 300;
+    }
 }
 
 #blog div{

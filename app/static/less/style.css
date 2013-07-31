@@ -76,9 +76,6 @@ hgroup img {
   filter: FlipH;
   -ms-filter: "FlipH";
 }
-section {
-  height: 1000px;
-}
 section img {
   float: left;
   height: 40px;
@@ -98,25 +95,73 @@ section.two-thirds {
   width: 622px;
   float: left;
 }
-#about {
+#intro {
   background: #8f5afa;
+  border-bottom: 100px solid #6d38d8;
 }
-#about h2 {
+#intro h2 {
   color: #fff;
   font-family: 'Droid Sans', sans-serif;
   text-align: center;
   font-size: 4.2em;
-  padding: 100px 0;
+  margin: 90px 0;
+  padding: 10px 0;
+  background: #7e49e9;
 }
-#about p {
-  color: #ddcdfe;
+#intro p {
+  color: #ffffff;
   font-family: 'Lato';
   font-weight: 300;
-  font-size: 1.3em;
+  font-size: 1.5em;
   text-align: center;
 }
 #projects {
   text-align: center;
+}
+#skills .content-container {
+  background: #ddd;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius-topleft: 5px;
+  -moz-background-clip: padding;
+  border-top-left-radius: 5px;
+  background-clip: padding-box;
+  -webkit-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0px 1px 5px rgba(0, 0, 0, 0.1);
+  color: inset 0px 1px 5px rgba(0, 0, 0, 0.1);
+}
+#skills h2 span {
+  font-family: 'Droid Sans', sans-serif;
+  background: #e99949;
+  padding: 10px;
+  display: inline;
+  color: white;
+}
+#skills h2 {
+  margin-bottom: 50px;
+}
+#skills table {
+  float: left;
+  margin-left: 50px;
+}
+#skills table:first {
+  margin-left: 0px;
+}
+#skills tr:nth-child(odd) {
+  background: #eee;
+}
+#skills tr:nth-child(even) {
+  background: #fff;
+}
+#skills td {
+  padding: 10px;
+  margin-right: 50px;
+  font-family: 'Lato';
+  font-width: 300;
 }
 #blog div {
   padding: 50px;

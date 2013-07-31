@@ -1,0 +1,17 @@
+<h2><span>Skills</span></h2>
+<table>
+    {% for skill in skills %}
+    {% if (loop.index % 5 ==  0) %}
+        </table>
+        <table>
+    {% endif %}
+    <tr>
+        <td> {{skill[0]}} </td>
+        <td>  
+            {% for i in range(skill[1]) %}
+            <i class="icon-plus"></i>
+            {% endfor %}
+        </td>
+    </tr>
+    {% endfor %}
+</table>
