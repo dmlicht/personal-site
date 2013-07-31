@@ -1,0 +1,222 @@
+@import "lesshat";
+
+// --- VARIABLES ---
+
+@hl-text: hsl(260, 78%, 60%);
+@light-text: #fff;
+@dark-text: #444;
+@space: 50px;
+@content-width: 960px;
+
+// --- CUSTOM MIXINS ---
+
+.flip-svg-img {
+    /*flip svg image*/
+    .scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+}
+
+.center-box(@width: @content-width){
+    width:@width;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// --- STYLING --- 
+
+/*TYPOGRAPHY*/
+
+body{
+    font-size: medium;
+    font-family: 'Droid Sans', sans-serif;
+    background: hsl(260, 00%, 90%);
+    background-color: hsl(260, 10%, 95%);
+}
+
+h1, h2, h3, h4, h5, h6, li{
+    font-family: 'Lato', helvetica, sans-serif;
+    font-weight: 100;
+}
+
+h1{
+    color: #fff;
+    font-size: 3.6em;
+}
+
+h2 {
+    color: @hl-text;
+    font-size: 2.4em;
+    margin-bottom: (@space / 2);
+    font-weight: 300;
+}
+
+p {  
+    color: @dark-text;
+    margin-bottom: (@space / 2);
+    line-height: 2.4em;
+    &:last-child{ 
+        margin-bottom: none 
+    }
+}
+
+/*LAYOUT*/
+hgroup{
+    padding: 100px 0;
+    .center-box(452px);
+    position: relative;
+    
+    h1{
+        float: right;
+    }
+
+    img { 
+        height: 116px;
+        width: auto;
+        position: absolute;
+        background: hsl(260, 50%, 70%);
+        .border-radius(10px);
+        .flip-svg-img;
+    }
+}
+
+
+section {
+    height: 1000px;
+    img{
+        float: left;
+        height: 40px;
+        width: auto;
+        position: relative;
+        bottom: 11px;
+    }
+    &.bulletpoint{
+        width: 286px;
+        float: left;
+        margin-bottom: @space;
+    }
+    & + &.bulletpoint {
+        margin-left: @space;
+    }
+    &.two-thirds {
+        width: 622px;
+        float: left;
+    }
+}
+
+#about {
+    background: @hl-text + #111;
+    h2 {
+        color: #fff;
+        font-family: 'Droid Sans', sans-serif;
+        text-align: center;
+        font-size: 4.2em;
+        padding: (@space * 2) 0;
+    }
+    p {
+        color: saturate(lighten(@hl-text, 30%), 20%);
+        font-family: 'Lato';
+        font-weight: 300;
+        font-size: 1.3em;
+        text-align: center;
+    }
+}
+
+#projects{
+    text-align: center;
+}
+
+#blog div{
+    .bordered-content-container
+}
+
+nav{
+    height: 60px;
+    background: url('../../static/img/low_contrast_linen.png');
+    border-top: 2px, solid, rgba(0,0,0,.59);
+    .box-shadow(0, 2px, 4px, rgba(0,0,0,.5));
+    overflow: visible;
+    text-align: center;
+    ul{ .center-box(460px); } 
+
+    li{
+        float: left;
+        font-size: 20px;
+        line-height: 20px;
+        width: 113px;
+        padding-bottom: 12px;
+        padding-top: 13px;
+        font-weight: 300;
+        border-top: 5px solid rgba(165, 135, 225, 0.2);
+        text-align: center;
+        &:hover { color: #bbb; 
+            a   { color: #fff; }
+        }
+        a {
+            text-decoration: none;
+            color: #ddd;
+        }
+        &.selected  { border-top: 5px solid rgba(165, 135, 225, 0.8); 
+            a       { color: hsl(260, 60%, 70%); }
+        }
+    }
+}
+
+.fixed-nav, .fixed-ul-nav{
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+.fixed-ul-nav{
+}
+
+a{
+    color: @hl-text + hsl(260, 0%, 10%);
+    text-decoration: none;
+    &.button{
+        background-color: hsl(260, 78%, 50%);
+        margin-bottom: @space;
+        font-weight: lighter;
+        padding: 10px;
+        color:#fff;
+        border-radius: 10px;
+    }
+}
+
+#header-background{
+    background: #222;
+    opacity: .98;
+}
+
+.content-container{
+    .center-box
+}
+
+.bordered-content-container{
+    padding: @space;
+    background: white;
+    border-left: 5px solid hsl(260, 20%, 90%);
+    border-right: 5px solid hsl(260, 20%, 90%);
+}
+
+.content-container{
+    padding: @space;
+}
+
+footer{
+  background-color: hsl(260, 20%, 50%);
+  background-color: hsl(260, 00%, 90%);
+  padding: 50px;
+  border-top: 5px solid hsl(260, 00%, 85%);
+}
+
+footer p{
+  width: 960px;
+  margin: 0 auto;
+  color: #fff;
+  color: hsl(260, 80%, 20%);
+
+  font-family: 'Lato', 'Abril Fatface', cursive;
+  font-weight: 300;
+}
