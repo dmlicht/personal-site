@@ -26,13 +26,9 @@
         <nav>
           <ul>
             {% for page in pages %}
-              {% if current_page == page %}
-                <li class="selected"><a href="#{{page}}">{{page}}</a></li>
-              {% else %}
-                <li><a href="#">{{page}}</a></li>
-              {% endif %}
+                <li><a href="#" class="on-page">{{page}}</a></li>
             {% endfor %}
-                <li><a href="#blog">blog</a></li>
+                <li><a href="http://www.thephysicaldangersofworkingwithcode.wordpress.com">blog</a></li>
           </ul>
         </nav>
       </header>

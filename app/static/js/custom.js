@@ -3,7 +3,7 @@ $(document).ready( function() {
     var navUlStartLeft = $('nav ul li').position().left;
     var navHeight = $('nav').height()
 
-    $('header nav a').click( function(event) {
+    $('header nav a.on-page').click( function(event) {
         event.preventDefault();
         var sectionToJumpTo = '#' + $(this).text();
         var topOfSection = $(sectionToJumpTo).position().top - navHeight;

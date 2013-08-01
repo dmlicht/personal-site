@@ -145,6 +145,7 @@ section.two-thirds {
   margin-bottom: 50px;
 }
 #skills table {
+  border: 1px solid #bbb;
   float: left;
   margin-left: 50px;
 }
